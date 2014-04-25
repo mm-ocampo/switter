@@ -1,0 +1,24 @@
+%h1 Newsfeed
+
+= link_to 'New Tweet', new_tweet_path
+
+%table
+  - @tweets.each do |tweet|
+    %tr
+      %h3
+        %b@
+        %b= tweet.username
+        = tweet.swit
+      %h6
+        Sweet:
+        = tweet.sweet_count
+        Sour:
+        = tweet.sour_count
+        = link_to 'Show', tweet
+        = link_to 'Edit', edit_tweet_path(tweet)
+        = link_to 'Delete', tweet, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        = link_to 'Sweet', tweet
+        = link_to 'Sour', tweet
+
+%br
+
