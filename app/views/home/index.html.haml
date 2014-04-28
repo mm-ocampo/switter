@@ -1,2 +1,9 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%h1 New on Switter? Sign up for an account!
+
+= form_for :user do |f|
+  .field
+    = f.text_field :username, placeholder: "Username"
+  .field
+    = f.password_field :password, placeholder: "Password"
+  .actions
+    = f.submit 'Sign up for Switter', class: "button"
